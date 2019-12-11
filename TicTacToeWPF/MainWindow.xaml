@@ -1,0 +1,42 @@
+﻿<Window x:Class="TicTacToeWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicTacToeWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="675" Width="500"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="DarkSlateBlue"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontSize" Value="50"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+
+        <Label Height="150" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="40">
+            <TextBlock>Tic-Tac-Toe</TextBlock>
+        </Label>
+        <WrapPanel Height="150" Width="250" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <TextBlock Height="20" Width="150">Player 1 Wins:</TextBlock>
+            <TextBlock Height="20" Width="100" Name="playerOneWins">0</TextBlock>
+            <TextBlock Height="20" Width="150">Player 2 Wins:</TextBlock>
+            <TextBlock Height="20" Width="100" Name="playerTwoWins">0</TextBlock>
+            <TextBlock Height="40" Width="250" FontSize="25" HorizontalAlignment="Center" TextAlignment="Center" Name="winText"></TextBlock>
+            <Button x:Name="newGameButton" Click="newGameButton_Click" Height="40" Width="250" FontSize="25" VerticalAlignment="Bottom" Content="New Game"/>
+        </WrapPanel>
+        <UniformGrid Name="gameBoard" Columns="3" Rows="3" Height="500" VerticalAlignment="Bottom">
+        <Button Click="HandleClick" Name="B00"/>
+        <Button Click="HandleClick" Name="B01"/>
+        <Button Click="HandleClick" Name="B02"/>
+        <Button Click="HandleClick" Name="B10"/>
+        <Button Click="HandleClick" Name="B11"/>
+        <Button Click="HandleClick" Name="B12"/>
+        <Button Click="HandleClick" Name="B20"/>
+        <Button Click="HandleClick" Name="B21"/>
+        <Button Click="HandleClick" Name="B22"/>
+    </UniformGrid>
+    </Grid>
+</Window>
